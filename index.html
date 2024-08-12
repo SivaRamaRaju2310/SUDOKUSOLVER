@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku Solver</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Sudoku Solver</h1>
+    <table>
+        <tbody>
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    let tableHTML = '';
+                    for (let i = 0; i < 9; i++) {
+                        tableHTML += '<tr>';
+                        for (let j = 0; j < 9; j++) {
+                            tableHTML += `<td><input type="text" maxlength="1" oninput="validateInput(this)" id="cell-${i}-${j}"></td>`;
+                        }
+                        tableHTML += '</tr>';
+                    }
+                    document.querySelector('tbody').innerHTML = tableHTML;
+                });
+            </script>
+        </tbody>
+    </table>
+    <button class="solve-button" onclick="solveSudoku()">Solve Sudoku</button>
+    <button class="reset-button" onclick="resetGrid()">Reset</button>
+    <script src="script.js"></script>
+</body>
+</html>
